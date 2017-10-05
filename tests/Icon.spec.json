@@ -1,0 +1,64 @@
+[
+    {
+        "name": "Size CSS matcher",
+        "caption": "Size CSS matcher",
+        "description": "Validates the 'size' css class Name for the size property",
+        "validationMessage": "Validates the css class name for the ${propName} property to be ${propValue}",
+        "matcherType": "customLookup",
+        "propertyName": "size",
+        "target": "className",
+        "list": [
+            {
+                "name": "Xsmall",
+                "value": "p-f-sz-xs"
+            },
+            {
+                "name": "Small",
+                "value": "p-f-sz-sm"
+            },
+            {
+                "name": "Medium",
+                "value": "p-f-sz-md"
+            },
+            {
+                "name": "Large",
+                "value": "p-f-sz-lg"
+            },
+            {
+                "name": "Xlarge",
+                "value": "p-f-sz-xl"
+            },
+            {
+                "name": "Xlarge2",
+                "value": "p-f-sz-2x"
+            },
+            {
+                "name": "Xlarge3",
+                "value": "p-f-sz-3x"
+            },
+            {
+                "name": "Xlarge4",
+                "value": "p-f-sz-4x"
+            }
+        ]
+    },
+    {
+        "name": "color CSS matcher",
+        "caption": "Icon color CSS matcher",
+        "description": "Validates the color string value for the 'color' property",
+        "validationMessage": "Validates the CSS class name for the ${propName} property to be ${propValue}",
+        "matcherType": "enumLookup",
+        "propertyName": "color",
+        "target": "className",
+        "type": "string-replace-lowercase",
+        "format": "p-t-${value}",
+        "exclude": [
+            "Primary",
+            "Secondary",
+            "Success",
+            "Warning",
+            "Error",
+            "Info"
+        ]
+    }
+]

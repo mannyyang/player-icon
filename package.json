@@ -1,0 +1,40 @@
+{
+  "name": "player-icon",
+  "version": "1.0.0",
+  "dependencies": {
+    "player-core": "^1.2.9",
+    "player-core-ui": "^1.1.4",
+    "player-theming": "^1.0.12",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "files": [
+    "build"
+  ],
+  "controlName": "Icon",
+  "author": "",
+  "main": "./build/control/Icon.js",
+  "typings": "./build/control/Icon.d.ts",
+  "devDependencies": {
+    "@types/cheerio": "0.22.1",
+    "@types/enzyme": "2.8.0",
+    "@types/jasmine": "2.5.52",
+    "@types/node": "7.0.32",
+    "@types/react": "15.0.30",
+    "@types/react-addons-test-utils": "0.14.18",
+    "@types/react-dom": "15.5.0",
+    "@types/sinon": "2.3.1",
+    "husky": "0.14.3",
+    "player-layout-controls": "^1.0.93",
+    "player-react-scripts": "^1.1.12"
+  },
+  "scripts": {
+    "start": "player-react-scripts start",
+    "build": "player-react-scripts build",
+    "test": "player-react-scripts test",
+    "testDebug": "player-react-scripts test --debug",
+    "setpublishfolder": "echo ##teamcity[setParameter name='NPM_PUBLISH_FOLDER' value='../'] && exit 0",
+    "prepush": "npm run build && npm test"
+  },
+  "portNumber": 37876
+}
