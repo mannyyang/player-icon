@@ -4,6 +4,7 @@
   "dependencies": {
     "player-core": "^1.2.9",
     "player-core-ui": "^1.1.4",
+    "player-doc-template": "^1.0.82",
     "player-theming": "^1.0.12",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"

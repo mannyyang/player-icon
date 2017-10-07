@@ -49,4 +49,9 @@ describe('Icon Functional Test', function () {
         const wrapper = shallow(<Icon tag="test" />);
         expect(wrapper.find('i').prop("data-tag")).toBe("test");
     });
+
+    it('That the title attribute exists and is set properly when property tooltip is set to "tool tip"', function () {
+        const wrapper = shallow(<Icon tooltip="tool tip" />);
+        expect(wrapper.find('i').prop("title")).toBe("tool tip");
+    });
 });
