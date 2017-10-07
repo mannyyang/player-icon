@@ -1,0 +1,162 @@
+{
+    "name": "Icon",
+    "caption": "Icon Control",
+    "description": "Icon Control",
+    "author": "Brendan Del Rosario",
+    "package": "player-icon",
+    "icon": "",
+    "category": "Common Controls",
+    "properties": [
+        {
+          "name": "iconName",
+          "caption": "Icon Name",
+          "description": "Icon Name",
+          "type": "enum",
+          "enumValues": [
+            "alert-round-1",
+            "alert-round-2",
+            "alert-triangle",
+            "bell",
+            "bin",
+            "button",
+            "calendar",
+            "cart",
+            "check",
+            "clock",
+            "cross",
+            "down-arrow-bar",
+            "down-triangle",
+            "expand",
+            "gear",
+            "horizontal-stroke",
+            "horizontal-three-lines",
+            "house",
+            "information",
+            "location",
+            "lock",
+            "magnifying-glass",
+            "papers",
+            "pencil",
+            "person",
+            "phone-export",
+            "right-cursor",
+            "star",
+            "three-dots",
+            "three-lists",
+            "three-scrolls",
+            "two-curved-arrows",
+            "two-squares",
+            "up-down-triangles",
+            "down-arrows",
+            "star-half",
+            "person-half",
+            "star-empty",
+            "person-empty",
+            "badge",
+            "hat",
+            "checkmark",
+            "sun",
+            "hourglass",
+            "play",
+            "pause",
+            "globe",
+            "add",
+            "two-squares-one-line",
+            "bookmark",
+            "action"
+        ],
+          "defaultValue": "action"
+      },
+      {
+          "name": "isWidthFixed",
+          "caption": "Is Fixed Width",
+          "description": "Whether to set a fixed width on the icon (helpful for icons that have different widths)",
+          "type": "boolean",
+          "defaultValue": false
+      },
+      {
+          "name": "size",
+          "caption": "Icon Size",
+          "description": "Icon size",
+          "type": "enum",
+          "enumValues": [
+              "Xsmall",
+              "Small",
+              "Medium",
+              "Large",
+              "Xlarge",
+              "Xlarge2",
+              "Xlarge3",
+              "Xlarge4",
+              "Xlarge5",
+              "Initial",
+              "Inherit",
+              "Unset"
+          ],
+          "defaultValue": "Medium"
+      },
+      {
+          "name": "color",
+          "caption": "Icon Color",
+          "description": "Icon Color",
+          "type": "enum",
+          "enumValues": [
+              "Default",
+              "Muted",
+              "Meta",
+              "Light",
+              "Primary",
+              "Secondary",
+              "Success",
+              "Warning",
+              "Error",
+              "Info"
+          ],
+          "defaultValue": "Default"
+      },
+      {
+          "name": "tooltip",
+          "caption": "Tooltip",
+          "description": "The title attribute tooltip text",
+          "type": "string",
+          "defaultValue": null
+      },
+      {
+          "name": "tag",
+          "caption": "Data Tag",
+          "description": "Used for data-tag attribute",
+          "type": "string",
+          "defaultValue": null
+      },
+      {
+          "name": "rotationDegree",
+          "caption": "Degree of Rotation",
+          "description": "The degree to rotate the icon",
+          "type": "enum",
+          "enumValues": [
+              "90",
+              "180",
+              "270"
+          ],
+          "defaultValue": ""
+      },
+      {
+          "name": "ariaHidden",
+          "caption": "Aria Hidden",
+          "description": "Should be aria hidden",
+          "type": "boolean",
+          "required": false,
+          "defaultValue": false
+      },
+      {
+          "name": "role",
+          "caption": "Role",
+          "description": "Role Property",
+          "type": "string",
+          "required": false,
+          "defaultValue": "" 
+      }
+    ],
+    "events": [],
+    "placeholders": []
+  }

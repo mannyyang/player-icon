@@ -1,0 +1,25 @@
+{
+    "version": "0.1.0",
+    "command": "npm",
+    "isShellCommand": true,
+    "args": [],
+    "showOutput": "always",
+    "echoCommand": true,
+    "suppressTaskName": true,
+    "tasks": [
+        {
+            "taskName": "Start Control Development Server",
+            "args": ["start"]
+        },
+        {
+            "taskName": "Build For Production",
+            "args": ["build"],
+            "isBuildCommand": true
+        },
+        {
+            "taskName": "Run Tests",
+            "args": ["test"],
+            "isTestCommand": true
+        }
+    ]
+}
