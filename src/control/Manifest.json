@@ -63,7 +63,10 @@
             "add",
             "two-squares-one-line",
             "bookmark",
-            "action"
+            "action",
+            "LinkedIn",
+            "Seek",
+            "up-arrow-bar"
         ],
           "defaultValue": "action"
       },
