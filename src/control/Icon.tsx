@@ -1,10 +1,66 @@
 import * as React from 'react';
 import './Icon.css';
 
+export type IconNameType = 
+    'action' |
+    'add' |
+    'alert-round-1' |
+    'alert-round-2' |
+    'alert-triangle' |
+    'badge' |
+    'bell' |
+    'bin' |
+    'bookmark' |
+    'button' |
+    'calendar' |
+    'cart' |
+    'check' |
+    'checkmark' |
+    'clock' |
+    'cross' |
+    'down-arrow-bar' |
+    'down-arrows' |
+    'down-triangle' |
+    'expand' |
+    'gear' |
+    'globe' |
+    'hat' |
+    'horizontal-stroke' |
+    'horizontal-three-lines' |
+    'hourglass' |
+    'house' |
+    'information' |
+    'LinkedIn' |
+    'location' |
+    'lock' |
+    'magnifying-glass' |
+    'papers' |
+    'pause' |
+    'pencil' |
+    'person-empty' |
+    'person-half' |
+    'person' |
+    'phone-export' |
+    'play' |
+    'right-cursor' |
+    'Seek' |
+    'star-empty' |
+    'star-half' |
+    'star' |
+    'sun' |
+    'three-dots' |
+    'three-lists' |
+    'three-scrolls' |
+    'two-curved-arrows' |
+    'two-squares-one-line' |
+    'two-squares' |
+    'up-arrow-bar' |
+    'up-down-triangles';
+
 export interface IconProps {
     ariaHidden?: boolean;
     color?: string;
-    iconName?: string;
+    iconName?: IconNameType;
     isWidthFixed?: boolean;
     role?: string;
     rotationDegree?: string;
