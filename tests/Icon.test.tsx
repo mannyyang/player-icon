@@ -15,7 +15,7 @@ for (var i=0; i< metadata.length;i++) {
 
 describe('Unit Tests', () => {
     properties.map(function (properties: any) {
-        const wrapper = mount(<Icon />);
+        const wrapper = mount(<Icon iconName='action' />);
         it('That it has a property named: ' + properties.name, function () {
             expect(wrapper.prop(properties.name)).toBeDefined();
         })
@@ -37,7 +37,7 @@ describe('Spec Runner Tests', () => {
                 //var _propertyName = testSpec.propertyName;
                 var dynamicProps = {};
                 dynamicProps = testSpec.properties;
-                var wrapper = shallow(<Icon {...dynamicProps} />);
+                var wrapper = shallow(<Icon iconName="action" {...dynamicProps} />);
                 expect(wrapper.find('i').hasClass(testSpec.matcherValue)).toBe(true);
             });
         })(_specs[m]);
@@ -46,12 +46,12 @@ describe('Spec Runner Tests', () => {
 
 describe('Icon Functional Test', function () {
     it('That the data-tag attribute exists and is set properly when property tag is set to "test"', function () {
-        const wrapper = shallow(<Icon tag="test" />);
+        const wrapper = shallow(<Icon iconName='action' tag="test" />);
         expect(wrapper.find('i').prop("data-tag")).toBe("test");
     });
 
     it('That the title attribute exists and is set properly when property tooltip is set to "tool tip"', function () {
-        const wrapper = shallow(<Icon tooltip="tool tip" />);
+        const wrapper = shallow(<Icon iconName='action' tooltip="tool tip" />);
         expect(wrapper.find('i').prop("title")).toBe("tool tip");
     });
 });

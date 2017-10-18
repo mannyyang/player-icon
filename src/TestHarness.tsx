@@ -7,6 +7,7 @@ import DocTemplate from 'player-doc-template';
 // Icon Imports
 import * as Manifest from './control/Manifest.json';
 import Icon from './control/Icon';
+import { IconNameType } from 'player-core-ui/types/IconNames'
 
 // Layout Imports
 import { GridLayout } from 'player-layout-controls/controls/GridLayout';
@@ -29,11 +30,13 @@ class TestHarness extends React.Component<{}, {}> {
             <GridLayout gutterHorizontal="Medium" gutterVertical="Medium" >
                 {
                     this.findProperty(property).map((value: string, key: number) => {
-                        iconProperties[property] = value;
+                        if (property !== 'iconName') {
+                            iconProperties[property] = value;
+                        }
                         return (
                             <GridCol key={key}>
                                 <div style={divStyles} >
-                                    <Icon {...iconProperties} /><br/>
+                                    <Icon iconName={value as IconNameType }{...iconProperties} /><br/>
                                     {value}
                                 </div>
                             </GridCol>
@@ -48,7 +51,7 @@ class TestHarness extends React.Component<{}, {}> {
             <div className="test-harness">
                 <DocTemplate manifest={Manifest}>
                     <Header size="medium">Default Icon</Header>
-                    <Icon />
+                    <Icon iconName="action"/>
 
                     <Header size="medium">Icon Colors</Header>
                     {this.renderIconGroup('color')}
