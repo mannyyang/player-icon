@@ -43,6 +43,17 @@
         ]
     },
     {
+        "name": "Icon CSS matcher",
+        "caption": "Icon CSS matcher",
+        "description": "Validates the Icon CSS class Name for the icon property",
+        "validationMessage": "Validates the CSS class name for the ${propName} property to be ${propValue}",
+        "matcherType": "enumLookup",
+        "propertyName": "iconName",
+        "target": "className",
+        "type": "string-replace-lowercase",
+        "format": "p-icon-${value}"
+    },
+    {
         "name": "color CSS matcher",
         "caption": "Icon color CSS matcher",
         "description": "Validates the color string value for the 'color' property",

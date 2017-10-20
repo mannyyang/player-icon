@@ -1,10 +1,11 @@
 import * as React from 'react';
 import './Icon.css';
+import { IconNameType } from 'player-core-ui/types/IconNames'
 
 export interface IconProps {
     ariaHidden?: boolean;
     color?: string;
-    iconName?: string;
+    iconName: IconNameType;
     isWidthFixed?: boolean;
     role?: string;
     rotationDegree?: string;
@@ -17,7 +18,6 @@ class Icon extends React.Component<IconProps, undefined> {
     static defaultProps = {
         ariaHidden: false,
         color: 'Default',
-        iconName: 'action',
         isWidthFixed: false,
         role: '',
         rotationDegree: '',
