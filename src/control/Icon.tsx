@@ -1,12 +1,13 @@
 import * as React from 'react';
 import './Icon.css';
-import { IconNameType } from 'player-core-ui/types/IconNames'
+import { IconNameType } from 'player-core-ui/types/IconNames';
 
 export interface IconProps {
     ariaHidden?: boolean;
     color?: string;
     iconName: IconNameType;
     isWidthFixed?: boolean;
+    shouldFlipForRtl?: boolean;
     role?: string;
     rotationDegree?: string;
     size?: string;
@@ -19,6 +20,7 @@ class Icon extends React.Component<IconProps, undefined> {
         ariaHidden: false,
         color: 'Default',
         isWidthFixed: false,
+        shouldFlipForRtl: false,
         role: '',
         rotationDegree: '',
         size: 'Medium',
@@ -32,6 +34,7 @@ class Icon extends React.Component<IconProps, undefined> {
         this.generateClasses = this.generateClasses.bind(this);
         this.constructClass = this.constructClass.bind(this);
         this.customizeEnums = this.customizeEnums.bind(this);
+        this.findRotationDegreeClass = this.findRotationDegreeClass.bind(this);
     }
 
     generateClasses(): string {
@@ -39,7 +42,6 @@ class Icon extends React.Component<IconProps, undefined> {
             color,
             iconName,
             isWidthFixed,
-            rotationDegree,
             size,
         } = this.props;
 
@@ -48,9 +50,33 @@ class Icon extends React.Component<IconProps, undefined> {
             this.constructClass(iconName, 'p-icon'),
             this.constructClass(size, 'p-f-sz'),
             this.constructClass(color, 'p-t'),
-            rotationDegree && this.constructClass(rotationDegree, 'p-rotate'),
+            this.findRotationDegreeClass(),
             isWidthFixed && 'p-icon-fixed-width',
         ].filter(Boolean).join(' ');
+    }
+
+    findRotationDegreeClass(): string {
+        const {
+            shouldFlipForRtl,
+            rotationDegree,
+        } = this.props;
+        
+        const isRtlIconFlippable =  document.documentElement.getAttribute('dir') === 'rtl' && shouldFlipForRtl;
+
+        if (rotationDegree === '180' && isRtlIconFlippable) {
+            return '';
+        }
+        
+        if (rotationDegree) {
+            // rotate based on rotationDegree prop
+            return this.constructClass(rotationDegree, 'p-rotate');
+        }
+
+        if (!rotationDegree && isRtlIconFlippable) {
+            return this.constructClass('180', 'p-rotate');
+        }
+
+        return '';
     }
 
     constructClass(prop: string | null | undefined, prefix: string): string {

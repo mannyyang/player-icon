@@ -7,7 +7,7 @@ import DocTemplate from 'player-doc-template';
 // Icon Imports
 import * as Manifest from './control/Manifest.json';
 import Icon from './control/Icon';
-import { IconNameType } from 'player-core-ui/types/IconNames'
+import { IconNameType } from 'player-core-ui/types/IconNames';
 
 // Layout Imports
 import { GridLayout } from 'player-layout-controls/controls/GridLayout';
@@ -32,11 +32,12 @@ class TestHarness extends React.Component<{}, {}> {
                     this.findProperty(property).map((value: string, key: number) => {
                         if (property !== 'iconName') {
                             iconProperties[property] = value;
+                            iconProperties['iconName'] = 'action';
                         }
                         return (
                             <GridCol key={key}>
                                 <div style={divStyles} >
-                                    <Icon iconName={value as IconNameType }{...iconProperties} /><br/>
+                                    <Icon iconName={value as IconNameType}{...iconProperties} /><br/>
                                     {value}
                                 </div>
                             </GridCol>
@@ -65,6 +66,26 @@ class TestHarness extends React.Component<{}, {}> {
                     <Header size="medium">Icon Rotations</Header>
                     {this.renderIconGroup('rotationDegree')}
 
+                    <Header size="medium">RTL Options</Header>
+                    <button
+                        onClick={() => {
+                            if (!document.documentElement.getAttribute('dir')) {
+                                document.documentElement.setAttribute('dir', 'rtl');
+                            } else {
+                                document.documentElement.removeAttribute('dir');
+                            }
+                            this.forceUpdate();
+                        }}
+                    >
+                        Toggle RTL
+                    </button>
+                    <br/>
+                    <Header size="medium">RTL Flip with no existing Rotation Degree</Header>
+                    <Icon iconName="right-cursor" shouldFlipForRtl={true} />
+                    <Header size="medium">Existing 180 Degree Flip with RTL Flip</Header>
+                    <Icon iconName="right-cursor" rotationDegree="180" shouldFlipForRtl={true} />
+                    <Header size="medium">Existing 180 Degree Flip no RTL Flip</Header>
+                    <Icon iconName="right-cursor" rotationDegree="180"  />
                 </DocTemplate>
             </div>
         );
