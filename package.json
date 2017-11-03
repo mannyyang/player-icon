@@ -1,6 +1,6 @@
 {
   "name": "player-icon",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "dependencies": {
     "player-core": "^1.2.9",
     "player-core-ui": "^1.1.9",

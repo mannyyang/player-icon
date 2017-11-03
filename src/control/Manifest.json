@@ -158,7 +158,15 @@
           "type": "string",
           "required": false,
           "defaultValue": "" 
-      }
+      },
+      {
+        "name": "shouldFlipForRtl",
+        "caption": "Should the icon flip when in RTL language",
+        "description": "Should the icon flip when in RTL language",
+        "type": "boolean",
+        "required": false,
+        "defaultValue": false 
+    }
     ],
     "events": [],
     "placeholders": []
