@@ -3,7 +3,6 @@ import * as ReactDOM from 'react-dom';
 
 import 'player-core-ui/assets/normalize.css';
 import 'semantic-ui-css/semantic.css';
-import 'player-core-ui/assets/core.css';
 import 'player-core-ui/assets/csod-icons.css';
 
 ///////////////////////////////////////////////////////////////////////

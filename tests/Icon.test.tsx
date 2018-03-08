@@ -54,4 +54,10 @@ describe('Icon Functional Test', function () {
         const wrapper = shallow(<Icon iconName='action' tooltip="tool tip" />);
         expect(wrapper.find('i').prop("title")).toBe("tool tip");
     });
+
+    it('That the className prop on the icon has the 180 degree classname', function () {
+        const wrapper = shallow(<Icon iconName='action' rotationDegree="180" />);
+        const classNameProperty = wrapper.find('i').prop("className") || '';
+        expect(classNameProperty.includes('p-rotate-180')).toBe(true);
+    });
 });
