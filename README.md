@@ -8,6 +8,7 @@
 ## Change Log
 | Version | Summary |
 | ---- | ----- |
+| 1.0.4 | Added icons and updated manifest |
 | 1.0.3 | Added shouldFlipForRtl in Manifest |
 | 1.0.2 | Added shouldFlipForRtl property |
 | 1.0.1 | |
